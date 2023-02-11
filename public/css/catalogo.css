@@ -1,0 +1,104 @@
+html {
+    min-height: 100%;
+    max-width: 100vw;
+    position: relative;
+    background-image: url(../img/isla.jpeg);
+    background-size: cover;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    max-width: 100vw;
+    margin-bottom: 100px;
+}
+.blur{
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.container{
+    width: 100%;
+    display: flex;
+}
+.cont-main{
+    padding: 100px;
+}
+.card {
+    --background: linear-gradient(to left, #2bf7f7 0%, #53ea80 100%);
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f72b2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card-info {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Hover*/
+.card:hover::after {
+    opacity: 0; 
+}
+
+.card:hover .card-info {
+    color: #f72b2b;
+    transition: color 1s;
+}
+p:hover{
+    color: #2bf7f7;
+}
+.top{
+    display: grid;
+    place-content: center;
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+}
+.top> img{
+    height: 300px;
+}
+.bottom{
+    width: 80%;
+    height: 200px;
+    font-family:sans-serif;
+    font-size: 10px;
+}
+.up{
+    display: flex;
+    justify-content: space-between;
+}

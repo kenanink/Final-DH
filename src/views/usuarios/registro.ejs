@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <%-include ('../partials/head') %> 
+  <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body class="body">
+  <%-include ('../partials/header') %> 
+
+<div class="cont-main">
+  <main>
+    <div class="principal2">
+      <form class="form-cont" action="/usuario/regitro" method="POST" enctype="multipart/form-data">
+        <h1 id="titulo">Registrate</h1>
+        <div class="ips">
+        <input class="btn-form" type="text" placeholder="Nombre" name="nombre">
+        <% if (locals && locals.errors) { %>
+          <% if (locals.errors[0].param == "nombre") { %>
+            <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+          <% } %>
+        <% } %>
+
+        <input class="btn-form" type="text" placeholder="Apellido" name="apellido">
+        <% if (locals && locals.errors) { %>
+          <% if (locals.errors[0].param == "apellido") { %>
+            <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+          <% } %>
+        <% } %>
+        <input class="btn-form" type="text" placeholder="Teléfono" name="telefono">
+        <% if (locals && locals.errors) { %>
+          <% if (locals.errors[0].param == "telefono") { %>
+            <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+          <% } %>
+        <% } %>
+        <input class="btn-form" type="email" placeholder="Email" name="email">
+        <% if (locals && locals.errors) { %>
+          <% if (locals.errors[0].param == "email") { %>
+            <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+          <% } %>
+        <% } %>
+        <% if(email){%> 
+          <label style="color: red; margin-left:80px; font-size: 14px;"><i class="fa-solid fa-circle-exclamation"></i>Error: Este Email ya existe.</label>
+        <% } %> 
+        <input class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
+        <% if (locals && locals.errors) { %>
+          <% if (locals.errors[0].param == "contrasena") { %>
+            <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+          <% } %>
+        <% } %>
+      </div>
+        <label for="file" class="foto">
+          <i class="fa-solid fa-file"></i>
+          <label for="file" id="foto">Agregar imagen de perfil</label>
+        </label>
+        <input id="file" class="btn-form" type="file" name="img"  required>
+        <p class="errors-validation">Recorda Adjuntar tu imagen de perfil</p>
+        <button id="btn-crear" type="submit">Crear una cuenta</button>
+        <a class="a" href="/usuario/login">Ya tienes una cuenta? Iniciar sesión</a>
+      </form>
+    </div>
+  </main>
+  <script type="text/javascript">
+    let archivo = document.querySelector('#file');
+    archivo.addEventListener('change',() =>{
+      document.querySelector('#foto').innerHTML = archivo.files[0].name;
+    })
+  </script>
+</div>
+  <%-include ('../partials/footer') %> 
+</body>
+</html>
