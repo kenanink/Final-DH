@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%-include('../partials/head') %> 
+        <link rel="stylesheet" href="/css/cargar.css">
+        <title>Cargar producto</title>
+      </head>
+
+    <body class="body">
+        <%-include('../partials/header') %> 
+        
+        <main>
+            <figure class="img-figure">
+                <img src="../../../img/g" >
+            </figure>
+            <div class="cont">
+                <div class="img-curso">
+                    <h2 id="titulo">Cargar producto</h2>
+                    <a class="btn-volver" href="/usuario/vista-perfil">Volver</a>
+                </div>
+                    <div class="final">
+                        <div class="file">
+                            <input name="imgProduct" type="file" required>
+                        </div>
+                        <div class="form-descrip">
+                            <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
+                        </div>
+                        <% if (locals && locals.errors) { %>
+                            <% if (locals.errors[0].param == "descripcion") { %>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                            <% } %>
+                          <% } %>
+                        <div class="btn">
+                            <button type="submit">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
+</html>

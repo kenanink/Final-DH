@@ -1,0 +1,245 @@
+.marco {
+  border: solid 3px #a74b61;
+  border-radius: 20px;
+  height: 100%;
+  margin: 10%;
+  margin-top: 10%;
+  box-shadow: 0px 0px 10px rgba(170, 53, 68, 0.726);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); 
+  padding: 10px;
+  display: flex;
+}
+
+.container{
+height: 100%;
+}
+
+.contain-hed{
+display: flex;
+align-items: center;
+height: 10%;
+padding-left: 10px;
+padding-right: 10px;
+justify-content: space-between;
+}
+
+.title{
+font-size: 15px;
+font-weight: 700;
+}
+
+.carrito-img{
+  background-image: url(../img/carb.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 5vw;
+  width: 5vw;
+}
+
+.container-products{
+height: 100%;
+}
+
+.object1, .object2, .object3, .object4 {
+display: flex;
+height: 65%;
+background-color: rgba(237, 248, 255, 0.4);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 10px;
+}
+
+.trash-obj1, .trash-obj2, .trash-obj3, .trash-obj4 {
+  height: 5vw;
+  width: 5vw;
+  margin: 10px;
+  background-image: url(/img/trash.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.logo-obj1{
+  width: 190px;
+  height: 160px;
+  background-image: url(/img/paises/inglaterra-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
+.logo-obj2{
+  width: 190px;
+  height: 160px;
+  background-image: url(/img/paises/brasil-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
+.logo-obj3{
+  width: 190px;
+  height: 160px;
+  background-image: url(/img/paises/alemania-figuras.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
+.logo-obj4{
+  width: 190px;
+  height: 160px;
+  background-image: url(/img/paises/espana-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
+.info, .info2, .info3, .info4 {
+  /* display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: 
+  "a a c"
+  "d e f"
+  "g g i"; */
+  height: auto;
+  width: 60%;
+  padding-left: 8%;
+  font-size: 14px;
+}
+
+.c, .c2, .c3, .c4 {
+  grid-area: a;
+  font-weight: 600;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.n, .n2, .n3, .n4 {
+grid-area: d;
+margin: 10px;
+margin-top: 0;
+}
+
+.p, .p2, .p3, .p4 {
+grid-area: g;
+margin: 10px;
+}
+
+.price, .price2, .price3, .price4 {
+grid-area: i;
+margin: 10px;
+}
+
+.cont-tot{
+display: flex;
+justify-content: center;
+margin-top: 10px;
+height: 10%;
+}
+
+.totals{
+width: 200px;
+text-align: center;
+padding: 10px;
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+border-radius: 5px;
+}
+
+.totals-list {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+padding: 0;
+margin: 0;
+}
+
+.cuotas {
+text-decoration: none;
+color: #a74b61;
+font-size: 12px;
+}
+
+.cuotas:hover {
+  color: #a74b61;
+}
+
+.totals li{
+display: grid;
+color: #a74b61;
+}
+
+.cont-butt{
+height: 20vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 10px;
+}
+
+.comprar {
+width: 100px;
+padding: 5px;
+border: solid 1px white;
+border-radius: 20px;
+background-color: #a74b61;
+color: #fff;
+margin-top: 10px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+@media (max-width: 768px) {
+  .logo-obj1, .logo-obj2, .logo-obj3, .logo-obj4 {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+.title{
+  font-size: 20px;
+  font-weight: 700;
+  }
+
+  .info, .info2, .info3, .info4 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: 
+    "a a c"
+    "d e f"
+    "g g i";
+    font-size: 16px;
+  }
+
+.trash-obj1, .trash-obj2, .trash-obj3, .trash-obj4 {
+  height: 3vw;
+  width: 3vw;
+}
+
+.cuotas {
+  font-size: 14px;
+}
+}
+
+@media (min-width: 1200px) {
+.main-content {
+  position: relative;
+}
+.title{
+  font-size: 40px;
+  font-weight: 600;
+  }
+  
+.info, .info2, .info3, .info4 {
+  font-size: 18px;
+}
+.trash-obj1, .trash-obj2, .trash-obj3, .trash-obj4 {
+  height: 2vw;
+  width: 2vw;
+}
+}

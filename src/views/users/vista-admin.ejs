@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="/css/perfilAdmin.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../partials/header') %>
+
+<main>
+  <div class="marco">
+    <%- include('../partials/navPerfil.ejs') %> 
+    <section class="admin-right">
+        <section class="list-usu">
+          <label>Lista de usuarios</label>
+          <% for(let f of list) {%> 
+          <div class="list">
+            <label class="id"><%= f.id %> </label>
+            <figure class="usua-img">
+              <img src="/img/perfil/<%= f.imagen %> ">
+            </figure>
+            <section class="info-usu"> 
+                <div>
+                  <label><%= f.nombre %> </label>
+                  <label><%= f.apellido %> </label>
+                </div>
+                <label class="correo"><%= f.email %> </label>
+                <form action="/usuario/eliminar/<%=f.id%>?_method=DELETE" method="POST"  class="eliminar"><button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i></button></form>
+            </section>
+          </div>
+          <% } %> 
+        </section>
+    </section>
+</main>
+  <%-include('../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/swper.js"></script>
+</html>

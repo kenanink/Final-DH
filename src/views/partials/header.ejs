@@ -5,33 +5,26 @@
 <header>
     <div class="container-navbar">
         <div class="cont-left">
-            <a href="/catalogo"><button class="but">CATALOGO</button></a>
+            <a href="/products/catalogo"><button class="but">CATALOGO</button></a>
         </div>
         <div class="cont-log">
                 <summary data-text="Awesome" class="logo">
-                    <span class="actual-text"><a href="/">VEINTICUATRO/SIETE</a></span>
-                    <span class="hover-text" aria-hidden="true"><a href="/">VEINTICUATRO/SIETE</a></span>
+                    <span class="actual-text" href="/">VEINTICUATRO/SIETE</span>
+                    <span class="hover-text" href="/" aria-hidden="true">VEINTICUATRO/SIETE</span>
                 </summary>
         </div>
         <div class="cont-right">
-            <button class="but" fot="ini">INICIAR SESION</button>
-            <input type="checkbox" id="ini">
-            <div class="menu">
-               
-                <form class="form-login" action="/usuario/perfil" method="POST">
-                    <h1 id="titulo">Iniciar sesión</h1>
-                        <label class="error"><i class="fa-solid fa-circle-exclamation"></i>Error: Email y/o contraseña incorrectos.</label>
-                    <div class="conten-btn">
-                        <input class="btn-info" name="email" type="email" placeholder= "Email">                      
-                        <label class="error"><i class="fa-solid fa-circle-exclamation"></i>Error: Email y/o contraseña incorrectos.</label>
-                        <input class="btn-info" name="password" type="password" placeholder="Contraseña">
-                    </div>
-                    <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
-                    <a> <button type="submit" id="boton-enviar">Iniciar Sesión</button> </a>
-                    <a class="olivdo-pas" href="/usuario/registro">No tienes una cuenta ? Registrarse</a>
-                </form>
-                
+            <% if(usu) {%> 
+            <a href="/usuario/vista-perfil"><button class="but">PERFIL</button></a>
+            <% }else { %> 
+            <a href="/usuario/login"><button class="but">INICIAR SESION</button></a>
+            <% } %> 
             </div>
+        </div>
+        <div class="carrito">
+            <span class="loader">
+                <a href="/"><img src="../img/icons/shop-car.png" class="shop-car"></a>
+            </span>
         </div>
     </div>
 </header>

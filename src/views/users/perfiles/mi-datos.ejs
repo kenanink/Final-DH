@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../../partials/header') %>
+
+<main>
+  <div class="marco">
+    <%- include('../../partials/navPerfil.ejs') %> 
+    <div id="particles-js" class="right">
+      <section class="mis-datos">
+        <div class="cabecera">
+          <img src="/img/perfil/<%= i.imagen %> "  >
+        </div>
+        <div class="cuerpo">
+          <section class="info-cards">
+            <label><%= i.nombre %> <%= i.apellido %> </label>
+            <% if(admi) {%> 
+            <label>Administrador </label>
+            <% } else { %> 
+              <label>cliente</label>
+            <% } %> 
+            <p>Email: <%= i.email %> </p>
+            <label>Teléfono: <%=   i.telefono%></label>
+          </section>
+          <a class="btn-editCard" href="/usuario/editar-usuario">Editar</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+  <%-include('../../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <Script src="/js/pariculas.js"></Script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/swper.js"></script>
+</html>

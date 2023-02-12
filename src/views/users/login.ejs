@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%-include('../partials/head') %> 
+        <link rel="stylesheet" href="/css/login.css">
+        <title>Login</title>
+      </head>
+  
+    <body class="body">
+        <%-include('../partials/header') %>
+          
+        <main>
+            <div class="principal">
+                <form class="form-login" action="/usuario/perfil" method="POST">
+                    <h1 id="titulo">Iniciar sesión</h1>
+                    <% if(error) {%> 
+                        <label class="error"><i class="fa-solid fa-circle-exclamation"></i>Error: Email y/o contraseña incorrectos.</label>
+                    <% } %> 
+                    <div class="conten-btn">
+                        <input class="btn-info" name="email" type="email" placeholder= "Email">
+                        <% if (locals && locals.errors) { %>
+                            <% if (locals.errors[0].param == "email") { %>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                            <% } %>
+                          <% } %>
+
+                        <input class="btn-info" name="password" type="password" placeholder="Contraseña">
+                        <% if (locals && locals.errors) { %>
+                            <% if (locals.errors[0].param == "password") { %>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                            <% } %>
+                          <% } %>
+                    </div>
+                    <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
+                    <a> <button type="submit" id="boton-enviar">Iniciar Sesión</button> </a>
+                    <a class="olivdo-pas" href="/usuario/registro">No tienes una cuenta ? Registrarse</a>
+                </form>
+            </div>
+        </main>
+
+        <%-include('../partials/footer') %>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

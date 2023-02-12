@@ -1,5 +1,14 @@
-a{
-  text-decoration: none;
+
+body {
+  height: 110vh;
+  position: relative;
+  background-image: url(../img/fondos/isla.jpeg);
+  background-size: cover;
+}
+body{
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 .container-navbar{
   width: 100%;
@@ -75,29 +84,26 @@ a{
   margin-left: 100px;
   margin-right: 100px;
   display: flex;
+  text-decoration: none;
+  text-decoration: none;
 }
-.logo {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-}
+
 .logo {
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color: rgba(217, 176, 255);
   --fs-size: 1em;
   letter-spacing: 3px;
-  text-decoration: none;
   font-size: var(--fs-size);
   font-family: "Arial";
   position: relative;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
+  text-decoration: none;
 }
 .hover-text {
+  text-decoration: none;
   position: absolute;
   box-sizing: border-box;
   content: attr(data-text);
@@ -110,6 +116,7 @@ a{
   -webkit-text-stroke: 1px var(--animation-color);
 }
 .logo:hover .hover-text {
+  text-decoration: none;
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
 }
@@ -143,3 +150,67 @@ a{
 	padding: 3vw;
   height: 70vh;
 }
+.carrito{
+  position: absolute;
+  top: 50px;
+  right: 200px;
+}
+.shop-car{
+  position: absolute;
+  width: 40px;
+  height: auto;
+  z-index: 10;
+  left: 25%;
+  top: 50%;
+}
+.loader {
+  width: 84px;
+  height: 84px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader:before , .loader:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #FFF;
+  transform: translate(-50% , -100%)  scale(0);
+  animation: push_401 2s infinite linear;
+}
+
+.loader:after {
+  animation-delay: 1s;
+}
+
+@keyframes push_401 {
+  0% , 50% {
+    transform: translate(-50% , 0%)  scale(1)
+  }
+
+  100% {
+    transform: translate(-50%, -100%) scale(0)
+  }
+}
+
+@media (max-width: 1130px){
+  
+}
+@media (max-width: 1000px){
+  
+}
+
+@media (max-width: 700px){
+  
+}
+
+@media (max-width: 600px){
+  
+}
+

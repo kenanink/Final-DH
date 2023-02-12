@@ -1,0 +1,56 @@
+<figure class="left">
+    <section class="const-img">
+        <img src="/img/perfil/<%= i.imagen %> " >
+        <h2> <%= i.nombre %> <%= i.apellido %> </h2>
+    </section>
+    <% if(admi==false) {%> 
+    <section class="btn-info">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-book"></i>Mis Pedidos</a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i>Mis Datos</a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+          </form>
+    </section>
+
+    <!-- menu -->
+    <section  class="const-img2">
+        <img src="/img/perfil/<%= i.imagen %> " >
+    </section>
+    <section class="btn-info2">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-book"></i></a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i></a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i></button>
+        </form>
+    </section>
+    <% } else if(admi) {%> 
+    <section class="btn-info">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-table-list"></i>Usuarios</a>
+            <a href="/producto/cargar"><i class="fa-solid fa-file-circle-plus"></i>Crear producto</a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i>Mis Datos</a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+          </form>
+    </section>
+
+    <section  class="const-img2">
+        <img src="/img/perfil/<%= i.imagen %> " >
+    </section>
+    <section class="btn-info2">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-table-list"></i></a>
+            <a href="/producto/cargar"><i class="fa-solid fa-file-circle-plus"></i></a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i></a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i></button>
+        </form>
+    </section>
+    <% } %> 
+</figure>

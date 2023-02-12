@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%-include('../partials/head', ) %>
+    <!-- {title: 'Editando: ' +  producto.titule } -->
+    <link rel="stylesheet" href="/css/editar.css">
+    <title>Editar producto</title>
+</head>
+
+<body class="body">
+    <%-include('../partials/header') %>
+
+    <main>
+        <figure class="img-figure">
+            <img src="../../../img/chart.svg" >
+            <label></label>
+        </figure>
+        <div class="cont">
+            <div class="img-p">
+                <h2 id="titulo">Editar prod</h2>
+                <a href="/producto/catalogo">Volver</a>
+                
+            </div>
+
+            <form class="form-cargar" action="/producto/editar/<%= ps.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                
+                <input type="text" name="titulo" placeholder="Nombre del producto:" value="<%= ps.nombre %> "> 
+                <section class="inpu">
+                    <div class="tex-ifo"> 
+
+                        <input class="precio" type="text" name="precio" placeholder="Precio:" value="<%= ps.precio %> ">
+                    </div>
+                </section>
+                <div class="final">
+                    <div class="file">
+                        <input name="img" type="file" required>
+                    </div>
+                    <div class="form-descrip">
+                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.descripcion %> </textarea>
+                    </div>
+                    <div class="btn-form">
+                        <div class="btn">
+                            <button class="buttom" type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- < % } %> -->
+        </div>
+    </main>
+
+    <%-include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -3,10 +3,10 @@ const db = require('../database/models');
 
 function validacionRegitro(req, res, next){
 
-    db.usuario.findAll().then((usuari)=>{
+    db.Usuario_dbs.findAll().then((usuario)=>{
         let email = req.body.email;
         let listaUsuario = [];
-        for(f of usuari){
+        for(f of usuario){
             listaUsuario.push(f.email);
         }
 
@@ -14,7 +14,7 @@ function validacionRegitro(req, res, next){
             return usuarios == email;
         });
         if(registro != undefined){   
-            res.render('/',{email:true,usu:false,admi:false});
+            res.render('users/registro',{email: true,usu:false,admi:false});
         }else{
            next();
         }
